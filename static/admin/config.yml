@@ -92,7 +92,9 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., title
     extension: 'de.md'
     format: frontmatter
+    filter: {field: "language", value: "de"}
     fields:
+      - {label: "Language", name: "language", widget: "select", options: ["de", "en"]}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -104,7 +106,9 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., title
     extension: 'en.md'
     format: frontmatter
+    filter: {field: "language", value: "en"}
     fields:
+      - {label: "Language", name: "language", widget: "select", options: ["de", "en"]}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
