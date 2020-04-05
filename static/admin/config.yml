@@ -90,7 +90,7 @@ collections:
     folder: "src/pages/about"
     create: false
     slug: "{{slug}}" # Filename template, e.g., title
-    extension: 'de.md'
+    extension: '.md'
     format: frontmatter
     filter: {field: "language", value: "de"}
     fields:
@@ -104,7 +104,7 @@ collections:
     folder: "src/pages/about"
     create: false
     slug: "{{slug}}" # Filename template, e.g., title
-    extension: 'en.md'
+    extension: '.md'
     format: frontmatter
     filter: {field: "language", value: "en"}
     fields:
