@@ -88,7 +88,7 @@ collections:
   - name: "pages-about-de"
     label: "About (Deutsch)"
     folder: "src/pages/about"
-    create: false
+    create: true
     filter: {field: "language", value: "de"}
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
@@ -99,7 +99,7 @@ collections:
   - name: "pages-about-en"
     label: "About (English)"
     folder: "src/pages/about"
-    create: false
+    create: true
     filter: {field: "language", value: "en"}
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
