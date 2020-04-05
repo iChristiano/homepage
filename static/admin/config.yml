@@ -91,6 +91,7 @@ collections:
     create: false
     slug: "{{slug}}" # Filename template, e.g., title
     extension: 'de.md'
+    format: frontmatter
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
       - {label: "Title", name: "title", widget: "string"}
@@ -102,6 +103,7 @@ collections:
     create: false
     slug: "{{slug}}" # Filename template, e.g., title
     extension: 'en.md'
+    format: frontmatter
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
       - {label: "Title", name: "title", widget: "string"}
@@ -113,6 +115,7 @@ collections:
     create: false
     slug: "{{slug}}" # Filename template, e.g., title
     extension: 'de.md'
+    format: frontmatter
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
       - {label: Title, name: title, widget: string}
@@ -131,6 +134,7 @@ collections:
     create: false
     slug: "{{slug}}" # Filename template, e.g., title
     extension: 'en.md'
+    format: frontmatter
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
       - {label: Title, name: title, widget: string}
