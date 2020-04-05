@@ -5,6 +5,7 @@
   "author": "Austin Green",
   "dependencies": {
     "bulma": "^0.8.0",
+    "codemirror": "^5.52.2",
     "gatsby": "^2.13.31",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-netlify": "^2.0.6",
@@ -13,12 +14,15 @@
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "^2.2.9",
+    "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-remark-copy-linked-files": "^2.0.7",
     "gatsby-remark-images": "^3.1.6",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.0.26",
+    "gatsby-transformer-json": "^2.2.27",
     "gatsby-transformer-remark": "^2.6.9",
     "gatsby-transformer-sharp": "^2.1.9",
+    "gsap": "^3.2.6",
     "lodash": "^4.17.15",
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms-app": "^2.9.6",
@@ -27,8 +31,13 @@
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
+    "react-codemirror2": "^7.1.0",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-redux": "^7.2.0",
+    "react-typist": "^2.0.5",
+    "redux": "^4.0.5",
+    "typescript": "^3.8.3",
     "uuid": "^3.2.1"
   },
   "keywords": [
@@ -46,5 +55,11 @@
   },
   "devDependencies": {
     "prettier": "^1.15.3"
+  },
+  "peerDependencies": {
+    "codemirror": "^5.52.2",
+    "react-codemirror2": "^7.1.0",
+    "react-redux": "^7.2.0",
+    "typescript": "^3.4.3"
   }
 }

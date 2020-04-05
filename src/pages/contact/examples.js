@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 export default class Index extends React.Component {
   render() {
     return (
-      <Layout>
+      <div>
         <section className="section">
           <div className="container">
             <div className="content">
@@ -44,7 +44,7 @@ export default class Index extends React.Component {
             </div>
           </div>
         </section>
-      </Layout>
+      </div>
     )
   }
 }

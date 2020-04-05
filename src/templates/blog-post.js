@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import LocalizedLink from "../components/LocalizedLink"
 
 export const BlogPostTemplate = ({
   content,
@@ -33,7 +34,7 @@ export const BlogPostTemplate = ({
                 <ul className="taglist">
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <LocalizedLink to={`/tags/${kebabCase(tag)}`}>{tag}</LocalizedLink>
                     </li>
                   ))}
                 </ul>
@@ -58,7 +59,7 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    //<Layout>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -75,7 +76,7 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
-    </Layout>
+    //</Layout>
   )
 }
 

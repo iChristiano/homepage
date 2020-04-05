@@ -2,9 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+//import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+
+//import LocalizedLink from "../components/LocalizedLink"
+import useTranslations from "../components/useTranslations"
+
+import Typist from 'react-typist';
 
 export const IndexPageTemplate = ({
   image,
@@ -47,7 +52,9 @@ export const IndexPageTemplate = ({
             padding: '0.25em',
           }}
         >
-          {title}
+          <Typist>
+            {title}
+          </Typist>
         </h1>
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
@@ -129,18 +136,20 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
+  const { hello } = useTranslations()
+
   return (
-    <Layout>
+    //<Layout>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
+        heading={hello}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
       />
-    </Layout>
+   // </Layout>
   )
 }
 

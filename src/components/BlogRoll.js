@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import LocalizedLink from "./LocalizedLink"
 
 class BlogRoll extends React.Component {
   render() {
@@ -30,12 +31,12 @@ class BlogRoll extends React.Component {
                     </div>
                   ) : null}
                   <p className="post-meta">
-                    <Link
+                    <LocalizedLink
                       className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
+                      to={`/${post.fields.slug}`}
                     >
                       {post.frontmatter.title}
-                    </Link>
+                    </LocalizedLink>
                     <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
                       {post.frontmatter.date}
@@ -46,9 +47,9 @@ class BlogRoll extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <Link className="button" to={post.fields.slug}>
+                  <LocalizedLink className="button" to={`/${post.fields.slug}`}>
                     Keep Reading →
-                  </Link>
+                  </LocalizedLink>
                 </p>
               </article>
             </div>

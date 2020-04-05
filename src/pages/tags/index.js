@@ -3,6 +3,7 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
+import LocalizedLink from "../../components/LocalizedLink"
 
 const TagsPage = ({
   data: {
@@ -12,7 +13,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout>
+  <div>
     <section className="section">
       <Helmet title={`Tags | ${title}`} />
       <div className="container content">
@@ -25,9 +26,9 @@ const TagsPage = ({
             <ul className="taglist">
               {group.map(tag => (
                 <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  <LocalizedLink to={`/tags/${kebabCase(tag.fieldValue)}`}>
                     {tag.fieldValue} ({tag.totalCount})
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
@@ -35,23 +36,28 @@ const TagsPage = ({
         </div>
       </div>
     </section>
-  </Layout>
+  </div>
 )
 
 export default TagsPage
 
 export const tagPageQuery = graphql`
-  query TagsQuery {
-    site {
-      siteMetadata {
-        title
-      }
+query TagsQuery($locale: String) {
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+  }
+  allMarkdownRemark(limit: 1000, filter: {fields: {locale: {eq: $locale}}}) {
+    group(field: frontmatter___tags) {
+      fieldValue
+      totalCount
+      nodes {
+        fields {
+          locale
+        }
       }
     }
   }
+}
 `

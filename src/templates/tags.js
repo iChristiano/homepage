@@ -2,15 +2,16 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import LocalizedLink from "../components/LocalizedLink"
 
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
       <li key={post.node.fields.slug}>
-        <Link to={post.node.fields.slug}>
+        <LocalizedLink to={`/${post.node.fields.slug}`}>
           <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-        </Link>
+        </LocalizedLink>
       </li>
     ))
     const tag = this.props.pageContext.tag
@@ -21,7 +22,7 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <Layout>
+      //<Layout>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">
@@ -33,18 +34,19 @@ class TagRoute extends React.Component {
                 <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
                 <ul className="taglist">{postLinks}</ul>
                 <p>
-                  <Link to="/tags/">Browse all tags</Link>
+                  <LocalizedLink to="/tags">Browse all tags</LocalizedLink>
                 </p>
               </div>
             </div>
           </div>
         </section>
-      </Layout>
+      //</Layout>
     )
   }
 }
 
 export default TagRoute
+
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
@@ -63,6 +65,7 @@ export const tagPageQuery = graphql`
         node {
           fields {
             slug
+            locale
           }
           frontmatter {
             title

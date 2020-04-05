@@ -6,9 +6,15 @@ import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ children }) => {
+
+//import MdLink from "./MdLink"
+
+const LocaleContext = React.createContext()
+
+const TemplateWrapper = ({ children, pageContext: { locale }  }) => {
   const { title, description } = useSiteMetadata()
   return (
+    <LocaleContext.Provider value={{ locale }}>
     <div>
       <Helmet>
         <html lang="en" />
@@ -52,7 +58,12 @@ const TemplateWrapper = ({ children }) => {
       <div>{children}</div>
       <Footer />
     </div>
+    </LocaleContext.Provider>
   )
 }
 
+export { LocaleContext }
+
 export default TemplateWrapper
+
+
