@@ -89,8 +89,8 @@ collections:
     label: "About (Deutsch)"
     folder: "src/pages/about"
     create: false
-    slug: "{{slug}}.de" # Filename template, e.g., title
-    extension: 'md'
+    slug: "{{slug}}" # Filename template, e.g., title
+    extension: 'de.md'
     format: frontmatter
     filter: {field: "language", value: "de"}
     fields:
@@ -103,8 +103,8 @@ collections:
     label: "About (English)"
     folder: "src/pages/about"
     create: false
-    slug: "{{slug}}.en" # Filename template, e.g., title
-    extension: 'md'
+    slug: "{{slug}}/index" # Filename template, e.g., title
+    extension: 'en.md'
     format: frontmatter
     filter: {field: "language", value: "en"}
     fields:
@@ -117,7 +117,7 @@ collections:
     label: "Products Page (Deutsch)"
     folder: "src/pages/products"
     create: false
-    slug: "{{slug}}" # Filename template, e.g., title
+    slug: "{{slug}}/index" # Filename template, e.g., title
     extension: 'de.md'
     format: frontmatter
     fields:
