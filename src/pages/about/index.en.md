@@ -1,4 +1,5 @@
 ---
+language: en
 templateKey: 'about-page'
 path: /about-us
 title: About our values
