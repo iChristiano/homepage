@@ -1,5 +1,5 @@
 ---
-id: index-page-en
+pageId: pages-index-en
 templateKey: index-page
 path: /
 title: Great coffee with a conscience

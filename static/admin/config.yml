@@ -49,32 +49,12 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "pages-de"
-    label: "Landing Page (Deutsch)"
+  - name: "pages"
+    identifier_field: pageId
+    label: "Home"
     folder: "src/pages"
-    create: false
-    slug: "{{slug}}" # Filename template, e.g., title
-    extension: 'de.md'
-    format: frontmatter
     fields:  # The fields for each document, usually in front matter
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-      - {label: Title, name: title, widget: string}
-      - {label: Image, name: image, widget: image}
-      - {label: Heading, name: heading, widget: string}
-      - {label: Subheading, name: subheading, widget: string}
-      - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-      - {label: Description, name: description, widget: string}
-      - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-      - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-
-  - name: "pages-en"
-    label: "Landing Page (English)"
-    folder: "src/pages"
-    create: false
-    slug: "{{slug}}" # Filename template, e.g., title
-    extension: 'en.md'
-    format: frontmatter
-    fields:  # The fields for each document, usually in front matter
+      - {label: "Page Id", name: "pageId", widget: "hidden"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
       - {label: Title, name: title, widget: string}
       - {label: Image, name: image, widget: image}
