@@ -1,5 +1,5 @@
 ---
-pageId: product-page-de
+pageId: pages-products-de
 templateKey: 'product-page'
 path: /produkte
 title: Unser Kaffee
