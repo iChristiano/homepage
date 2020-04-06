@@ -85,11 +85,11 @@ collections:
       - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
       - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
 
-  - name: "pages-about-de"
+  - name: "pages-about"
     label: "About (Deutsch)"
     folder: "src/pages/about"
     create: false
-    slug: "{{slug}}" # Filename template, e.g., title
+    slug: "{{slug}}-de" # Filename template, e.g., title
     extension: 'de.md'
     format: frontmatter
     filter: {field: "language", value: "de"}
@@ -99,11 +99,11 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "pages-about-en"
+  - name: "pages-about"
     label: "About (English)"
     folder: "src/pages/about"
     create: false
-    slug: "{{slug}}" # Filename template, e.g., title
+    slug: "{{slug}}-en" # Filename template, e.g., title
     extension: 'en.md'
     format: frontmatter
     filter: {field: "language", value: "en"}
