@@ -99,10 +99,6 @@ collections:
     identifier_field: pageId
     label: "Products"
     folder: "src/pages/products"
-    create: false
-    slug: "{{slug}}" # Filename template, e.g., title
-    extension: 'de.md'
-    format: frontmatter
     fields:
       - {label: "Page Id", name: "pageId", widget: "hidden"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
