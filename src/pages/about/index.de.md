@@ -1,6 +1,6 @@
 ---
-language: de
-templateKey: 'about-page'
+language: en
+templateKey: about-page
 path: /ueber-uns
 title: DE About our values
 ---
