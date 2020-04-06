@@ -1,4 +1,5 @@
 ---
+id: index-page-en
 templateKey: index-page
 path: /
 title: Great coffee with a conscience

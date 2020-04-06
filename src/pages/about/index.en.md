@@ -1,5 +1,5 @@
 ---
-id: about-en
+id: about-page-en
 templateKey: about-page
 path: /about-us
 title: EN About our values
