@@ -49,12 +49,12 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "pages-index"
-    identifier_field: id
+  - name: "pages"
+    identifier_field: pageId
     label: "Landing Page"
     folder: "src/pages"
     fields:  # The fields for each document, usually in front matter
-      - {label: "Id", name: "id", widget: "hidden"}
+      - {label: "Page Id", name: "pageId", widget: "hidden"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
       - {label: Title, name: title, widget: string}
       - {label: Image, name: image, widget: image}
@@ -66,21 +66,21 @@ collections:
       - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
 
   - name: "pages-about"
-    identifier_field: id
+    identifier_field: pageId
     label: "About"
     folder: "src/pages/about"
     fields:
-      - {label: "Id", name: "id", widget: "hidden"}
+      - {label: "Page Id", name: "pageId", widget: "hidden"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "pages-products"
-    identifier_field: id
+    identifier_field: pageId
     label: "Products Page (Deutsch)"
     folder: "src/pages/products"
     fields:
-      - {label: "Id", name: "id", widget: "hidden"}
+      - {label: "Page Id", name: "pageId", widget: "hidden"}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
       - {label: Title, name: title, widget: string}
       - {label: Image, name: image, widget: image}
