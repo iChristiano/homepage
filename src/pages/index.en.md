@@ -1,11 +1,11 @@
 ---
-pageId: pages-index-en
-templateKey: index-page
-path: /
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
+path: /
+pageId: pages-index-en
+templateKey: index-page
+title: Great coffee with a conscience1
+image: /img/home-jumbotron.jpg
 mainpitch:
   title: Why Kaldi
   description: >
@@ -70,3 +70,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
