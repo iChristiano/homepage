@@ -2,6 +2,7 @@ backend:
     name: github
     repo: ichristiano/homepage
     branch: master
+    site_domain: cms.netlify.com
     commit_messages:
         create: 'Create {{collection}} “{{slug}}”'
         update: 'Update {{collection}} “{{slug}}”'

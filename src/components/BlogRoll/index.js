@@ -1,27 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
-import LocalizedLink from "./LocalizedLink"
+import { graphql, StaticQuery } from 'gatsby'
+import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import LocalizedLink from "../LocalizedLink"
+import { LocaleContext } from "../Layout"
 
-class BlogRoll extends React.Component {
-  render() {
-    const { data } = this.props
+import blogRollStyle from './blogRoll.module.scss';
+
+import { CMS_LOCALE } from '../../../config/constants';
+
+const BlogRoll = ({ data }) => {
+    // grab the locale (passed through context) from the Context Provider, in cms context use a default locale
+    const { locale } = React.useContext(LocaleContext) || CMS_LOCALE;
     const { edges: posts } = data.allMarkdownRemark
 
     return (
       <div className="columns is-multiline">
         {posts &&
-          posts.map(({ node: post }) => (
+          posts.filter(post => post.node.fields.locale === locale).map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
+                className={`
+                    ${blogRollStyle.blogListItem} tile is-child box notification 
+                    ${ post.frontmatter.featuredpost ? blogRollStyle.isFeatured : ''}
+                `}
               >
                 <header>
                   {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
+                    <div className={blogRollStyle.featuredThumbnail}>
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
@@ -33,7 +39,7 @@ class BlogRoll extends React.Component {
                   <p className="post-meta">
                     <LocalizedLink
                       className="title has-text-primary is-size-4"
-                      to={`/${post.fields.slug}`}
+                      to={`/blog/${post.fields.slug}`}
                     >
                       {post.frontmatter.title}
                     </LocalizedLink>
@@ -47,7 +53,7 @@ class BlogRoll extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <LocalizedLink className="button" to={`/${post.fields.slug}`}>
+                  <LocalizedLink className="button" to={`/blog/${post.fields.slug}`}>
                     Keep Reading →
                   </LocalizedLink>
                 </p>
@@ -56,7 +62,6 @@ class BlogRoll extends React.Component {
           ))}
       </div>
     )
-  }
 }
 
 BlogRoll.propTypes = {
@@ -71,16 +76,14 @@ export default () => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        ) {
+        allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
           edges {
             node {
               excerpt(pruneLength: 400)
               id
               fields {
                 slug
+                locale
               }
               frontmatter {
                 title

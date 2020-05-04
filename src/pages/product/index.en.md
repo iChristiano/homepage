@@ -1,8 +1,8 @@
 ---
-pageId: pages-products-en
+pageId: pages-products-de
 templateKey: 'product-page'
-path: /products1
-title: Our Coffee
+path: /products/
+title: Our coffee
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 description: >-

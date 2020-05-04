@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import github from '../img/github-icon.svg';
+import logo from '../img/logo.svg';
 
 import LocalizedLink from "./LocalizedLink"
 import useTranslations from "./useTranslations"
@@ -30,7 +30,7 @@ const Navbar = () => {
   // }
 
   //render() {
-    const { backToHome, about, products } = useTranslations();
+    const { about, products } = useTranslations();
     return (
       <nav
         className="navbar is-transparent"
@@ -38,36 +38,25 @@ const Navbar = () => {
         aria-label="main-navigation"
       >
         <div className="container">
-
-     
-            <LocalizedLink to="/" aria-label={backToHome}>
-              Homepage
-            </LocalizedLink>
-            <div>
-              <Link to="/" hrefLang="de">
-                Deutsch
-              </Link>
-              {` `}/{` `}
-              <Link to="/en" hrefLang="en">
-                English
-              </Link>
-            </div>
             <div className="navbar-start has-text-centered">
-              <LocalizedLink className="navbar-item" to={`/${about}`}>
-                About
-              </LocalizedLink>
-              <LocalizedLink className="navbar-item" to={`/${products}`}>
-                Products
-              </LocalizedLink>
-              <LocalizedLink className="navbar-item" to="/blog">
-                Blog
-              </LocalizedLink>
-              <LocalizedLink className="navbar-item" to="/contact">
-                Contact
-              </LocalizedLink>
-              <LocalizedLink className="navbar-item" to="/contact/examples">
-                Form Examples
-              </LocalizedLink>
+                <LocalizedLink to="/" className="navbar-item" title="Logo">
+                <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+                </LocalizedLink>
+                <LocalizedLink className="navbar-item" to={`/${about}`}>
+                    {`/${about}`}
+                </LocalizedLink>
+                <LocalizedLink className="navbar-item" to={`/${products}`}>
+                    Products
+                </LocalizedLink>
+                <LocalizedLink className="navbar-item" to="/blog">
+                    Blog
+                </LocalizedLink>
+                <LocalizedLink className="navbar-item" to="/contact">
+                    Contact
+                </LocalizedLink>
+                <LocalizedLink className="navbar-item" to="/contact/examples">
+                    Form Examples
+                </LocalizedLink>
             </div>
             <div className="navbar-end has-text-centered">
               <a
@@ -81,11 +70,20 @@ const Navbar = () => {
                 </span>
               </a>
             </div>
+            <div className="navbar-item">
+              <Link to="/" hrefLang="de">
+                Deutsch
+              </Link>
+              {`  `}/{`  `}
+              <Link to="/en" hrefLang="en">
+                English
+              </Link>
+            </div>
        
         </div>
       </nav>
-    )
+    );
   //}
 }
 
-export default Navbar
+export default Navbar;

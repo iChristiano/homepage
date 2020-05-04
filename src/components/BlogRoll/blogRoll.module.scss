@@ -1,0 +1,48 @@
+
+@import "./config/styles/mixins";
+@import "./config/styles/variables";
+
+// blog roll
+
+.blogListItem.isFeatured {
+    background-color: #d6400033;
+}
+.blogListItem header {
+    display: flex;
+    margin-bottom: 1em;
+}
+.blogListItem .featuredThumbnail {
+    flex-basis: 35%;
+    margin: 0 1.5em 0 0;
+}
+
+@include tablet {
+    .blogListItem .featuredThumbnail {
+        flex-basis: 50%;
+    }
+
+    .blogListItem.isFeatured {
+        background-color: violet;
+    }
+}
+
+@include tabletPort {
+    .blogListItem.isFeatured {
+        background-color: orange;
+    }
+}
+
+@include mobile {
+    .blogListItem header {
+        display: block;
+    }
+    .blogListItem .featuredThumbnail {
+        text-align: center;
+        max-width: 70%;
+        margin: 0 0 1em;
+    }
+
+    .blogListItem.isFeatured {
+        background-color: lightgreen;
+    }
+}
